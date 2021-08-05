@@ -1,0 +1,63 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+const int ROW = 5;
+const int COL = 3;
+
+void higherThan90(double[][COL]);
+
+//void showTable(double[][COL]);
+// 0 1 2 avg (all lines for this void function)
+
+int main()
+{
+  double grades[ROW][COL];
+  
+
+  higherThan90(grades);
+
+  return 0;
+}
+
+void higherThan90(double g[][COL])
+{
+  ifstream fin;
+  ofstream fout;
+  fin.open("2dgrades.txt");
+  fout.open("goutput.txt");
+  if (fin)
+    {
+      for (int r=0; r<ROW; r++)
+	{
+	  double total=0,avg=0;
+	  
+	  for (int c=0; c<COL; c++)
+	    {     
+	      fin>>g[r][c];
+	      total+=g[r][c];
+	      if (total>=270)
+		{
+		  for(c=0;c<COL;c++)
+		    {	
+		      fout << g[r][c] << " ";	  
+		    }
+		}
+	    }
+	  avg=total/COL;
+	  if (avg>90)
+	    {
+	      fout <<setprecision(3)<<avg<<endl;
+	    }    
+	} 
+      fin.close();    
+      fout.close();
+    }
+  else 
+    {
+      cout << "No input file found\n";
+    }
+ 
+}
+	  

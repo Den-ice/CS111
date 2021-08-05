@@ -1,0 +1,74 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+  int ch,num, r1,r2,r3,r4,r5,r6;
+  unsigned seed = time (0);
+  srand (seed);
+
+  r1 = rand()%101;
+  r2 = rand()%101;
+  r3 = rand()%101;
+  r4 = rand()%11;
+  r5 = rand()%11;
+  r6 = rand()%11;
+
+do
+  {
+    cout << "\nMath Tutor Manu\n"
+	 << "-----------------------\n"
+	 << "1. Addition problem\n"
+	 << "2. Subtraction problem\n"
+	 << "3. Multiplication problem\n"
+	 << "4. Division problem\n"
+	 << "5. Quit this program\n"
+	 << "-----------------------\n"
+	 << "Enter option (1-5): ";
+      cin >> ch;
+      switch (ch)
+	{
+
+	case 1: cout << r1 << "+" << r2 << "+" << r3 << "=";
+	  cin >> result;
+
+	  result = r1+r2+r3;
+	  
+	  if (!(result == r1+r2+r3))
+	    {
+	      cout << "\nThe correct answer here is " << result << endl;
+	    }
+	  break;
+
+	case 2: cout << r1 << "-" << r2 "-" << r3 << "=";
+	  cin >> result;
+
+	  result = r1-r2-r3;
+
+	  if (!(result = r1-r2-r3))
+	    {
+	      cout << "\nThe correct answer here is " << result << endl;
+	    }
+	  break;
+
+	case 3: cout << r1 << "*" << r2 << "*" << r3 << "=";
+	  cin >> result;
+
+	  result = r1*r2*r3;
+
+	  if (!(result = r1*r2*r3))
+	    {
+	      cout << "\nThe correct answer is " << result << endl;
+	    }
+	  break;
+
+	case 4: cout << cout << r1 << "\	case 5:
+	default : cout << "Invalid option, enter option (1-5): ";
+
+  }while (ch>5 || ch<5);
+
+}

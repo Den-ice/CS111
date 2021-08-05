@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cstdlib>
+#include <iomanip>
+#include <ctime>
+
+using namespace std; 
+
+int main ()
+{
+  int result, r1, r2;
+  unsigned seed = time(0);
+
+  srand(seed);
+
+  r1 = rand()%101;
+  r2 = rand()%101;
+
+  cout<<setw(4)<<right<< r1<< endl;
+  cout<<left<< "+" <<setw(3)<<right<< r2<<endl;
+
+  cin>>right>>result;
+
+  if (result == r1+r2) 
+    {
+      cout<< "\nGood Job"<<endl;
+    }
+  else
+    {
+      if (result != r1+r2)
+	{
+          cout<< "\nWrong"<<endl;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+  ifstream fin;
+  ofstream fout;
+  string name;
+  double initialB, deduct, newBal;
+  
+  fin.open("bank.txt");
+  fout.open("output0.txt");
+
+if (fin)
+    {
+      while( fin>>name>>initialB>>deduct)
+	{
+	  cout<<name<<endl;
+	  newBal = initialB - deduct;
+	  fout>>name>>" ">>initialB>>" ">>newBal>>endl;;
+	}
+	fin.close();
+    }
+  else
+    {
+      cout << "Input file doesn't exist";
+
+    }
+ 
+ fout.close();
+  return 0;
+}

@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int min, hr;
+  double min_angle, hr_angle;
+
+  //Input variables.
+  cout<<"Please enter in minutes and hours.";
+  cin>> hr>> min;
+    cout << endl;
+    hr%=12;
+  //Calculate clock angles.
+  hr_angle = 0.5 * (hr*60 +min);
+  min_angle = 6*min;
+  
+
+
+  //Display minute and hour angles.
+  cout<< "The minute angle is " << min_angle<< "\nThe hour angle is " << hr_angle<<endl;
+
+}

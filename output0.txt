@@ -1,0 +1,5 @@
+George 3000 2000
+Smith 2000 500
+Micheal 120 90
+Evan 25 0
+Bob 1000 1

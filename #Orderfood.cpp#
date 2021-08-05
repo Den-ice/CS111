@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+  cout << "What would you like to order?\n"
+       << "\t1. Salmon\n"
+       << "\t2. Shrimp\n"
+       << "\t3. Sushi\n"
+       << "\t4. Steak\n"
+       << "\t5. Ribs\n"
+       << "\t6. Taco\n"
+       << "\t7. Enchiladas"
+
+
+
+}

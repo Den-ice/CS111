@@ -1,0 +1,38 @@
+#inlcude <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+  string fl_Nme, scsz, telphne_Num, col_maj, stud_ID;
+  char initial_fstltr, initial_secltr;
+  float grade1, grade2, grade3;
+  int unit1, unit2, unit3;
+
+  fl_Nme = "Denice Hickethier";
+  scsz = "3629 Sky Haven Ln, Oceanside, CA, 92056.";
+  telphne_Num = "7608093857";
+  col_maj = "Computer Science";
+  stud_ID = "003961228";
+  initial_fstltr = 'D';
+  initial_secltr = 'H';
+
+  grade1 = 100.0;
+  grade2 = 100.0;
+  grade3 = 99.0;
+  unit1 = 50;
+  unit2 = 100;
+  unit3 = 50;
+  
+  //Calculate weighted average.
+  float avg = ((grade1*(unit1/100))+(grade2*(unit2/100))+(grade3*(unit3)))/3; 
+  cout<< "The name of student is" << fl_Nme << endl;
+  cout<< "The address of student is " << scsz << endl;
+  cout<< "The phone number of student " << telphne_Num << endl;
+  cout<< "The major of studen is " << col_maj << endl;
+  cout<< "The ID of student is " << stud_ID << endl;
+  cout<< "The initial of student is " << initial_fstltr << initial_secltr << endl;
+  cout<< "The weightd average of student is " << avg << endl;
+
+}

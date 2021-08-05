@@ -1,0 +1,21 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+void showProgInfo();
+//int getNum();
+//void findLargest();
+
+int main()
+{
+showProgInfo();
+//getNum();
+//findLargest();
+ return 0;
+}
+
+void showProgInfo()
+{
+  cout << "***************************************************************\n"
+       << "This program will ask you enter 3 numbers and find the largest.\n"
+       << "***************************************************************\n";
+}

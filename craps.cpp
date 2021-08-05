@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+//#include <ctime>
+using namespace std;
+
+int main ()
+{
+  int fr=0, roll=0;
+  unsigned seed = time(0);
+  srand (seed);
+
+
+    fr = (rand()%6+1) + (rand()%6+1);
+    cout << fr << endl;
+    
+    if (fr == 7 || fr == 11)
+      {     
+	cout << "===WIN===\n";
+      }  
+    else if (fr == 2 || fr == 3 || fr ==12)
+      {   
+	cout << "===LOSE===\n";
+      }  
+    else
+      {
+	do
+	  {
+	    roll = (rand()%6+1) + (rand()%6+1);
+	    cout << roll << endl;
+	    if (roll == 11 || roll == fr)
+	      {
+		cout << "===WIN===\n";
+	      }
+	    else if (roll ==7)
+	      {
+		cout << "===LOSE===\n";
+	      }
+	    
+	  }while (!(roll == 7 || fr == 11));
+      }
+   
+    return 0;
+}

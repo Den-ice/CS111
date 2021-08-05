@@ -1,0 +1,65 @@
+//PURPOSE: This program uses the input file to provide the output file with information about the students midterm and final grades, calculates the class average, and finds the top and lowest scored student.
+//IMPLEMENTED BY: Denice Hicekthier
+//11/10/2016
+//USER INFORMATION: The program uses a given input file with the lists of studets' first name, last name, midterm, and final exam grades. This reads and processes the information of the average of total grades for the class and fisrt and last name for the highest and lowest total grade in the class.
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+  ifstream fin;
+  ofstream fout;
+  string name,last,n,l,slast,llast,sname,lname;
+  double totgrade, clgrade=0, students=0, midterm,final, min=0, max=0, num;
+
+  fin.open("grades.txt");
+  fout.open("output.txt");
+
+  if (fin)
+    {
+      while(fin >> name >> last >> midterm >> final)
+	{
+	  //cout << name << " " << last << endl;
+	  totgrade = (midterm*0.4)+(final*0.6);
+	  clgrade += totgrade;
+	  students++;
+	  fout << name << " " << last << " " << midterm << " " << final << " " << totgrade
+	       << endl;
+	  num = totgrade;	
+	  if (min==0 && max==0 && num>=0)
+	    {
+	      n = name;
+	      l = last;
+	      max = num;
+	      min = num;
+	    }
+	  else if (num<min && num>=0 && max>num)
+	    {
+	      sname = name;
+	      slast = last;
+	      min = num;
+	    }
+	  else if (num>max && num>=0)
+	    {
+	      lname = name;
+	      llast = last;
+	      max = num;
+	    }
+	}
+      fout << "\n\n\nThe average of total grades is " << setprecision(4) << clgrade/students 
+	   << endl << "The highest total grade is " << max << " by " << lname << " " << llast << endl
+	   << "The lowest total grade is " << min << " by " << sname << " " << slast << endl;
+      fin.close ();
+    }
+  else
+    {
+      cout << "Input file doesn't exist";
+    }
+  fout.close();
+  return 0;
+}
+
